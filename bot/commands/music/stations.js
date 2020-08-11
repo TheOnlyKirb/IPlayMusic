@@ -9,8 +9,8 @@ exports.run = async (Client, message, args) => {
     } else if(args[0].toLowerCase() == "info") {
         if(!args[1]) return embed.setAuthor("You must provide a station to lookup!", `${message.author.displayAvatarURL()}`), message.channel.send(embed)
         args = args.splice(1, args.length)
-        var station = Client.music.stations.filter(channel => channel[0].toLowerCase() == args.join(" ").toLowerCase())[0]
-        if(!station[0]) return embed.setAuthor("Unknown station. Sorry I couldn't find anything!", `${message.author.displayAvatarURL()}`), message.channel.send(embed)
+        var station = Client.music.stations.filter(channel => channel[0].toLowerCase().includes(args.join(" ").toLowerCase()))[0]
+        if(!station || !station[0]) return embed.setAuthor("Unknown station. Sorry I couldn't find anything!", `${message.author.displayAvatarURL()}`), message.channel.send(embed)
         embed.setAuthor(`${station[0]}`, `${message.author.displayAvatarURL()}`)
         embed.setDescription(`${station[6]}`)
         embed.addField("Website", `${station[4]}`, true)
