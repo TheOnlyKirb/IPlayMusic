@@ -20,6 +20,7 @@ module.exports = (Client) => {
             guild: data.guild,
             spawnedChannel: data.summoned,
             station: station,
+            vc: data.vc,
             dispatcher: data.dispatcher,
             player: data.player,
             userControl: data.user,
@@ -36,7 +37,7 @@ module.exports = (Client) => {
         else {
             message.member.voice.channel.join().then(async connection => {
                 const player = Client.music.servers.get(message.guild.id) ? Client.music.servers.get(message.guild.id).dispatcher.play(`${station[1]}`, { bitrate: "auto" }) : connection.play(`${station[1]}`, { bitrate: "auto" })
-                Client.music.servers.recordPlayback({ guild: message.guild, dispatcher: connection, user: message.author, player: player, summoned: message.channel.id }, station)
+                Client.music.servers.recordPlayback({ guild: message.guild, dispatcher: connection, user: message.author, player: player, summoned: message.channel.id, vc: message.member.voice.channel.id }, station)
             })
         }
         embed.setAuthor("🎵 Playback Beginning 🎵", `${message.author.displayAvatarURL()}`)
