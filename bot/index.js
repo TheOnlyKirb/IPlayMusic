@@ -3,6 +3,7 @@ const Client = new Discord.Client({
     fetchAllMembers: false,
     disableEveryone: true,
     disabledEvents: [],
+    intents: [],
     http: { api: 'https://discordapp.com/api', version: 7 },
     shardCount: 1
 });

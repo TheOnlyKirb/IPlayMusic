@@ -1,0 +1,24 @@
+{
+  "name": "iplaymusic",
+  "version": "1.0.0",
+  "description": "The public facing bot from my Discord.JS music bot tutorial. It plays music.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheOnlyKirb/IPlayMusic.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheOnlyKirb/IPlayMusic/issues"
+  },
+  "homepage": "https://github.com/TheOnlyKirb/IPlayMusic#readme",
+  "dependencies": {
+    "@discordjs/opus": "github:discordjs/opus",
+    "discord.js": "github:discordjs/discord.js",
+    "pm2": "^4.5.4"
+  }
+}
